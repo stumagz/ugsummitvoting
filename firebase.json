@@ -20,6 +20,10 @@
       {
         "source": "/vote",
         "function": "vote"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }

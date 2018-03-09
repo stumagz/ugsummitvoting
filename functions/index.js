@@ -1,6 +1,7 @@
 const admin = require('firebase-admin');
 const functions = require('firebase-functions');
 const cors = require('cors');
+const requestlib=require('request');
 
 admin.initializeApp(functions.config().firebase);
 
@@ -14,36 +15,42 @@ exports.vote = functions.https.onRequest((request, response) => {
 		optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
 	}
 	var corsFn = cors(corsOptions);
-	corsFn(request, response, function() {
+	corsFn(request, response, () => {
 		if(request.body.hasOwnProperty('name') && request.body.hasOwnProperty('mobile') && request.body.hasOwnProperty('award') && request.body.hasOwnProperty('value')) {
 			mobile = parseInt(request.body.mobile.replace(/\s+/g, ''));
-			collection = db.collection('votes').where('mobile', '==', mobile).where('award', '==', request.body.award).limit(1).get().then(function(querySnapshot) {
+			collection = db.collection('votes').where('mobile', '==', mobile).where('award', '==', request.body.award).limit(1).get().then(querySnapshot => {
 				if (!querySnapshot.empty) {
 					if(querySnapshot.docs[0].get('status')) {
-						response.send({res:0, message: 'You have already voted for this award using the given mobile number'});
+						response.send({result:0, message: 'You have already voted for this award using the given mobile number'});
 					}
 					else {
-						response.send({res:1,message:querySnapshot.docs[0].id});
+						response.send({result:1,message:querySnapshot.docs[0].id});
 					}
 				} else {
+					var otp = Math.floor(100000 + Math.random() * 900000);
+					requestlib('http://control.msg91.com/api/sendhttp.php?authkey='+functions.config().msg91.authkey+'&mobiles='+mobile+'&message='+encodeURI("Your OTP to vote for Undergrad Summit Awards is ")+otp+'&sender=STUMGZ&route=4', { json: true }, (err, res, body) => {
+					  if (err) { return response.send({result: 0, message: 'Something went wrong. Please try again.'});}
+					  if(body==="Authentication failure"){ return response.send({result: 0, message: 'Something went wrong. Please try again.'});}
+					  return true;
+					});
 					new_vote = db.collection('votes').doc();
 					setData = new_vote.set({
-						name: req.body.name,
+						name: request.body.name,
 						mobile: mobile,
-						award: req.body.award,
-						college: req.body.college,
-						otp: Math.floor(100000 + Math.random() * 900000),
+						award: request.body.award,
+						value: request.body.value,
+						otp: otp,
 						status: false
 					});
-					return setDoc.then(res => {
-						return response.send({result:1,message: res.id});
+					return setData.then(res => {
+						return response.send({result:1,message: new_vote.id});
 					});
 				}
 				return;
 			});
 		}
 		else if(request.body.hasOwnProperty('id') && request.body.hasOwnProperty('otp')) {
-			db.collection('votes').doc(request.body.id).get().then(function(querySnapshot) {
+			db.collection('votes').doc(request.body.id).get().then(querySnapshot => {
 				if (!querySnapshot.empty) {
 					var data = querySnapshot.data();
 					if(data.otp === request.body.otp) {
@@ -71,7 +78,7 @@ exports.vote = functions.https.onRequest((request, response) => {
 			});
 		}
 		else {
-			response.status(500).send('Error: Invalid Parameters');
+			response.send({result:0,message:'Error: Invalid Parameters'});
 		}
 	});
 });
