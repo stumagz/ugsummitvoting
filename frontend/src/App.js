@@ -34,13 +34,13 @@ class Question extends Component {
     }
 
     return options.map(function(item,i){
-      return <Radio style={radioStyle} value={item.value} key={item.value} ><Avatar shape="square" size="large" icon="user" />   {item.name}</Radio>
+      return <Radio style={radioStyle} value={item.value} key={item.value} ><Avatar shape="square" size="large" src={require("./images/"+item.src)} />   {item.name}</Radio>
     });
   }
 
   render() {
     return (
-      <div style={{ background: '#ECECEC', padding: '30px' }}>
+      <div style={{ background: "url("+require("./images/UGSummitBG")+")", padding: '30px' }}>
         <Card bordered={true} style={{ width: "100%" }}>
            <h2 style={{'fontSize':'20px'}}>{this.props.data.question}</h2> 
            <RadioGroup onChange={this.onChange} value={this.state.value}>
@@ -242,7 +242,7 @@ class App extends Component{
     {
       return (<div style={{height:'100vh','backgroundColor':'rgb(236, 236, 236)'}}><Question data={Nominations[this.state.selectedQuestion-1]}></Question></div>); 
     }
-    return (<div style={{'position':'absolute','width':'100%','textAlign':'center'}}><img src="http://bashooka.com/wp-content/uploads/2015/10/404-errrrr-page-11.jpg"/></div>);
+    return (<p>Kindly move to <a href="http://ugsummit.stumagz.com/vote">ugsummit.stumagz.com/vote</a> to vote for your collge/student for undergrad summit awards.</p>);
     
   }
 }
