@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'antd/dist/antd.css';
-import Nominations from './nominations.json'
+import Nominations from './nominations1.json'
 import axios from 'axios';
 import { message,Button,Modal,Input,Radio,Card,Avatar } from 'antd';
 
