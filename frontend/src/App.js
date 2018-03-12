@@ -3,14 +3,14 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'antd/dist/antd.css';
 import axios from 'axios';
-import { message,Button,Modal,Input,Radio,Card } from 'antd';
+import { message,Button,Modal,Input,Radio,Card,Avatar } from 'antd';
 
 const RadioGroup = Radio.Group;
 
 const Nominations = [
   {
     "id": "1",
-    "question": "Best College in  R&D Award",
+    "question": "Best College in R&D Award",
     "options": [
       {
         "name": "Anurag Group of Institutions - Hyderabad",
@@ -72,7 +72,7 @@ const Nominations = [
   },
   {
     "id": "3",
-    "question": "Co Curricular Award",
+    "question": "Best College in Co-Curricular Activities Award",
     "options": [
       {
         "name": "MLR Institute of Technology - Hyderabad",
@@ -108,7 +108,7 @@ const Nominations = [
   },
   {
     "id": "4",
-    "question": "E-Cell Award",
+    "question": "Best E-Cell / Innovation Cell Award",
     "options": [
       {
         "name": "Muffakham Jah College of Engineering and Technology - Hyderabad",
@@ -139,7 +139,7 @@ const Nominations = [
   },
   {
     "id": "5",
-    "question": "Eco-Friendly Award",
+    "question": "Best Eco-Friendly College Award",
     "options": [
       {
         "name": "Bhoj Reddy Engineering College for Women - Hyderabad",
@@ -170,7 +170,7 @@ const Nominations = [
   },
   {
     "id": "6",
-    "question": "Emerging College Award",
+    "question": "Best Emerging College Award",
     "options": [
       {
         "name": "BVRIT Hyderabad College of Engineering for Women - Hyderabad",
@@ -201,7 +201,7 @@ const Nominations = [
   },
   {
     "id": "7",
-    "question": "Event Participation Award",
+    "question": "Best Participation in Events Award",
     "options": [
       {
         "name": "CMR Engineering College - Hyderabad",
@@ -232,7 +232,7 @@ const Nominations = [
   },
   {
     "id": "8",
-    "question": "Placement Award",
+    "question": "Best Placement Cell of the Year Award",
     "options": [
       {
         "name": "BVRIT - Hyderabad",
@@ -263,7 +263,7 @@ const Nominations = [
   },
   {
     "id": "9",
-    "question": "Sports College Award",
+    "question": "Best College Performance in Sports Award",
     "options": [
       {
         "name": "CMR Group of Institutions - Hyderabad",
@@ -283,12 +283,90 @@ const Nominations = [
       {
         "name": "St.Martin's Engineering College - Hyderabad",
         "value": "mrtn",
-        "src": "st martins_logo"
+        "src": "st_martins_logo"
       },
       {
         "name": "TKR College of Engineering and Technology - Hyderabad",
         "value": "tkrc",
         "src": "tkrcollege_logo"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "question": "Student Celebrity of the Year Award",
+    "options": [
+      {
+        "name": "Preethi Reddy - SR Engineering College",
+        "value": "preethi"
+      },
+      {
+        "name": "Shivani - G. Narayanamma Institute of Technology",
+        "value": "shivani"
+      },
+      {
+        "name": "Meher Rishika Nori - BVRIT Hyderabad College of Engineering for Women",
+        "value": "rishika"
+      },
+      {
+        "name": "Siddharth Bendi - Chaitanya Bharathi Institute of Technology",
+        "value": "siddharth"
+      },
+      {
+        "name": "Kedar Kasturi - Aurora's Engineering College (Bhongir)",
+        "value": "kasturi"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "question": "Best Student Sportsperson of the Year Award",
+    "options": [
+      {
+        "name": "Praveen - Vignana Bharathi Institute Of Technology",
+        "value": "praveen"
+      },
+      {
+        "name": "Praneethi Varma - G. Narayanamma Institute of Technology",
+        "value": "praneethi"
+      },
+      {
+        "name": "Swetha Siddam Shetty - SR Engineering College",
+        "value": "swetha"
+      },
+      {
+        "name": "Megha Sudha - BVRIT Hyderabad College of Engineering for Women",
+        "value": "megha"
+      },
+      {
+        "name": "Vishal Tumma - Anurag College of Engineering",
+        "value": "vishal"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "question": "Best Academic Performer Award",
+    "options": [
+      {
+        "name": "Srilakshmi Gunda - Maturi Venkata Subba Rao Engineering College",
+        "value": "gunda"
+      },
+      {
+        "name": "Likitha A - Sphoorthy Engineering College, Hyderabad",
+        "value": "likitha"
+      },
+      {
+        "name": "Jay Karan T - Institute Of Aeronautical Engineering",
+        "value": "karan"
+      },
+      {
+        "name": "Manohitha Ch - DVR & Dr. HS MIC College of Technology",
+        "value": "manohitha"
+      },
+      {
+        "name": "D Soumya - BVRIT Hyderabad College of Engineering for Women",
+        "value": "soumya"
       }
     ]
   }
@@ -320,6 +398,8 @@ class Question extends Component {
     }
 
     return options.map(function(item,i){
+      if(item.hasOwnProperty('src'))
+        return <Radio style={radioStyle} value={item.value} key={item.value} ><Avatar shape="square" src={require("./images/"+item.src)} />{item.name}</Radio>
       return <Radio style={radioStyle} value={item.value} key={item.value} >{item.name}</Radio>
     });
   }
@@ -419,7 +499,7 @@ class AuthForm extends Component {
   checkOTP(){
 
     let data = {
-      otp:parseInt(this.state.otp),
+      otp:parseInt(this.state.otp, 10),
       id:this.state.id
     }
 
@@ -432,7 +512,7 @@ class AuthForm extends Component {
     axios.post('https://us-central1-ugsummit-stumagz.cloudfunctions.net/vote',data,config)
     .then(function (response) {
       this.setState({isLoading:false});
-      if(response.data.result == 1)
+      if(response.data.result === 1)
       {
         this.Voted(response.data.message);
       }
@@ -462,7 +542,7 @@ class AuthForm extends Component {
   }
 
   Voted(message) {
-    const modal = Modal.success({
+    Modal.success({
       title: message,
       onOk(){ window.location.href = 'http://ugsummit.stumagz.com/vote/'}
     });
