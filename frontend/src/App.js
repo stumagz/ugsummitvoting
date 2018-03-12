@@ -13,22 +13,22 @@ const Nominations = [
     "question": "Best College in  R&D Award",
     "options": [
       {
-        "name": "Anurag Engineering College",
+        "name": "Anurag Group of Institutions - Hyderabad",
         "value": "anrh",
         "src": "anurag_collegelogo"
       },
       {
-        "name": "Cmr Group of Institutions",
+        "name": "CMR Group of Institutions - Hyderabad",
         "value": "cmrm",
         "src": "cmr_grouplogo"
       },
       {
-        "name": "Mlr Institute of Technology",
+        "name": "MLR Institute of Technology - Hyderabad",
         "value": "mlid",
         "src": "mlrit_collegelogo"
       },
       {
-        "name": "Vignana Bharathi Institute Of Technology",
+        "name": "Vignana Bharathi Institute Of Technology - Hyderabad",
         "value": "vbit",
         "src": "vbit_collegelogo"
       }
@@ -39,32 +39,32 @@ const Nominations = [
     "question": "Best Infrastructure Award",
     "options": [
       {
-        "name": "Cmr Group of Institutions",
+        "name": "CMR Group of Institutions - Hyderabad",
         "value": "cmrm",
         "src": "cmr_grouplogo"
       },
       {
-        "name": "CVSR College OF Engineering",
+        "name": "CVSR College OF Engineering - Hyderabad",
         "value": "cvsr",
         "src": "cvsr_logo"
       },
       {
-        "name": "Guru Nanak Institutions",
+        "name": "Guru Nanak Institutions - Hyderabad",
         "value": "gnit",
         "src": "gni_logo"
       },
       {
-        "name": "Lakireddy Bali Reddy College OF Engineering",
+        "name": "Lakireddy Bali Reddy College of Engineering - Vijayawada",
         "value": "lbce",
         "src": "lbrce_logo"
       },
       {
-        "name": "Mahatma Gandhi Institute of Technology",
+        "name": "Mahatma Gandhi Institute of Technology - Hyderabad",
         "value": "mgit",
         "src": "mgit_logo"
       },
       {
-        "name": "MIC College OF Technology",
+        "name": "DVR & Dr.HS MIC College of Technology - Vijayawada",
         "value": "dvrc",
         "src": "mict_logo"
       }
@@ -75,32 +75,32 @@ const Nominations = [
     "question": "Co Curricular Award",
     "options": [
       {
-        "name": "MLR Institute of Technology",
+        "name": "MLR Institute of Technology - Hyderabad",
         "value": "mlid",
         "src": "mlrit_logo"
       },
       {
-        "name": "Narayana Engineering College",
+        "name": "Narayana Engineering College - Gudur",
         "value": "narn",
         "src": "narayanacollege_logo"
       },
       {
-        "name": "Nadimpalli Satyanarayana Raju Institute",
+        "name": "Nadimpalli Satyanarayana Raju Institute of Technology - Vishakapatnam",
         "value": "nsrt",
         "src": "nsrit_logo"
       },
       {
-        "name": "Potti Sriramulu College of Engineering",
+        "name": "Potti Sriramulu College of Engineering - Vijayawada",
         "value": "pscv",
         "src": "pscmrcollege_logo"
       },
       {
-        "name": "SR Engineering College",
+        "name": "SR Engineering College - Warangal",
         "value": "srec",
         "src": "sreccollege_logo"
       },
       {
-        "name": "Usha Rama College of Engineering",
+        "name": "Usha Rama College of Engineering - Vijayawada",
         "value": "urce",
         "src": "usharamacollege_logo"
       }
@@ -111,27 +111,27 @@ const Nominations = [
     "question": "E-Cell Award",
     "options": [
       {
-        "name": "Muffakham Jah College of Engineering",
+        "name": "Muffakham Jah College of Engineering and Technology - Hyderabad",
         "value": "mjcet",
         "src": "mjcollege_logo"
       },
       {
-        "name": "SR Engineering College",
+        "name": "SR Engineering College - Warangal",
         "value": "srec",
         "src": "srec_logo"
       },
       {
-        "name": "Vardhaman College of Engineering",
+        "name": "Vardhaman College of Engineering - Hyderabad",
         "value": "vmeg",
         "src": "Vardhaman_logo"
       },
       {
-        "name": "Vasavi College of Engineering ",
+        "name": "Vasavi College of Engineering - Hyderabad",
         "value": "vasv",
         "src": "vasavicollege_logo"
       },
       {
-        "name": "VNR Vignana Jyothi Institute of Engineering",
+        "name": "VNR Vignana Jyothi Institute of Engineering and Technology - Hyderabad",
         "value": "vjec",
         "src": "vnrvjiet_logo"
       }
@@ -142,27 +142,27 @@ const Nominations = [
     "question": "Eco-Friendly Award",
     "options": [
       {
-        "name": "Bhoj Reddy Engineering College",
+        "name": "Bhoj Reddy Engineering College for Women - Hyderabad",
         "value": "brecw",
         "src": "bhojreddy_logo"
       },
       {
-        "name": "G. Narayanamma Institute of Technology",
+        "name": "G. Narayanamma Institute of Technology and Science - Hyderabad",
         "value": "gntw",
         "src": "gnarayanammacollege_logo"
       },
       {
-        "name": "Hyderabad Institute of Technology",
+        "name": "Hyderabad Institute of Technology and Management - Hyderabad",
         "value": "hitm",
         "src": "hitamcollege_logo"
       },
       {
-        "name": "Loyola Academy Degree PG College",
+        "name": "Loyola Academy Degree and PG College - Secunderabad",
         "value": "loyl",
         "src": "loyola_logo"
       },
       {
-        "name": "Vignana Bharathi Institute of Technology",
+        "name": "Vignana Bharathi Institute of Technology - Hyderabad",
         "value": "vbit",
         "src": "vbit_logo"
       }
@@ -173,27 +173,27 @@ const Nominations = [
     "question": "Emerging College Award",
     "options": [
       {
-        "name": "BVRIT Hyderabad College of Engineering",
+        "name": "BVRIT Hyderabad College of Engineering for Women - Hyderabad",
         "value": "bvri",
         "src": "bvritw_logo"
       },
       {
-        "name": "Roots College OF Engineering",
+        "name": "Roots Collegium Business School - Hyderabad",
         "value": "tmln",
         "src": "rootscollege_logo"
       },
       {
-        "name": "Sphoorthy Engineering College",
+        "name": "Sphoorthy Engineering College - Hyderabad",
         "value": "sphn",
         "src": "Sphoorthyengineeringcollege_logo"
       },
       {
-        "name": "Sreyas College of Engineering",
+        "name": "Sreyas Institute of Engineering and Technology - Hyderabad",
         "value": "srys",
         "src": "sreyas_logo"
       },
       {
-        "name": "VEMU Institute of Technology",
+        "name": "VEMU Institute of Technology - Chitoor",
         "value": "vemu",
         "src": "vemucollege_logo"
       }
@@ -204,27 +204,27 @@ const Nominations = [
     "question": "Event Participation Award",
     "options": [
       {
-        "name": "CMR Engineering College",
+        "name": "CMR Engineering College - Hyderabad",
         "value": "cmrn",
         "src": "cmrec_logo"
       },
       {
-        "name": "Guru Nanak Institutions",
+        "name": "Guru Nanak Institutions - Hyderabad",
         "value": "gnit",
         "src": "gni_logo"
       },
       {
-        "name": "Jyothishmathi Institute of Technology",
+        "name": "Jayamukhi Institute of Technological Sciences - Warangal",
         "value": "jits",
         "src": "jitsimage_logo"
       },
       {
-        "name": "Institute Of Aeronautical Engineering",
+        "name": "Institute Of Aeronautical Engineering - Hyderabad",
         "value": "iare",
         "src": "iare_logo"
       },
       {
-        "name": "Sphoorthy Engineering College",
+        "name": "Sphoorthy Engineering College - Hyderabad",
         "value": "sphn",
         "src": "Sphoorthyengineeringcollege_logo"
       }
@@ -235,27 +235,27 @@ const Nominations = [
     "question": "Placement Award",
     "options": [
       {
-        "name": "BVRIT Hyderabad College of Engineering",
+        "name": "BVRIT - Hyderabad",
         "value": "bvri",
         "src": "bvrit_logo"
       },
       {
-        "name": "Chaitanya Bharathi Institute of Technology",
+        "name": "Chaitanya Bharathi Institute of Technology - Hyderabad",
         "value": "cbit",
         "src": "cbit_logo"
       },
       {
-        "name": "CVR College of Engineering",
+        "name": "CVR College of Engineering - Hyderabad",
         "value": "cvrh",
         "src": "cvr_logo"
       },
       {
-        "name": "G. Narayanamma Institute of Technology",
+        "name": "G. Narayanamma Institute of Technology - Hyderabad",
         "value": "gntw",
         "src": "gnarayanammacollege_logo"
       },
       {
-        "name": "G Pulla Reddy College of Engineering",
+        "name": "G Pulla Reddy College of Engineering and Technology - Kurnool",
         "value": "gpre",
         "src": "gprec_logo"
       }
@@ -266,27 +266,27 @@ const Nominations = [
     "question": "Sports College Award",
     "options": [
       {
-        "name": "CMR College Of Enginnering & Technology",
+        "name": "CMR Group of Institutions - Hyderabad",
         "value": "cmrn",
         "src": "cmr_logo"
       },
       {
-        "name": "MLR Institute of Technology",
+        "name": "MLR Institute of Technology - Hyderabad",
         "value": "mlid",
         "src": "mlrit_logo"
       },
       {
-        "name": "Malla Reddy Group of Institutions",
+        "name": "Malla Reddy Group of Institutions - Hyderabad",
         "value": "mltm",
         "src": "mrgi_logo"
       },
       {
-        "name": "St. Martin's Engineering College",
+        "name": "St.Martin's Engineering College - Hyderabad",
         "value": "mrtn",
         "src": "st martins_logo"
       },
       {
-        "name": "TKR College of Engineering and Technology",
+        "name": "TKR College of Engineering and Technology - Hyderabad",
         "value": "tkrc",
         "src": "tkrcollege_logo"
       }
@@ -524,6 +524,9 @@ class App extends Component{
   }
 
   render(){
+
+    //return (<p>We'll be back soon and we apologize for the inconvenience.<a href="http://ugsummit.stumagz.com/vote">go back</a></p>);
+
     if(this.state.selectedQuestion > 0 && this.state.selectedQuestion <= (Nominations.length))
     {
       return (<div style={{height:'100vh','backgroundColor':'rgb(236, 236, 236)'}}><Question data={Nominations[this.state.selectedQuestion-1]}></Question></div>); 
