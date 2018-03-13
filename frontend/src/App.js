@@ -214,9 +214,9 @@ const Nominations = [
         "src": "gni_logo"
       },
       {
-        "name": "Jayamukhi Institute of Technological Sciences - Warangal",
-        "value": "jits",
-        "src": "jitsimage_logo"
+        "name": "Vaagdevi Group of Institutions - Warangal",
+        "value": "vec",
+        "src": "vec_logo"
       },
       {
         "name": "Institute Of Aeronautical Engineering - Hyderabad",
