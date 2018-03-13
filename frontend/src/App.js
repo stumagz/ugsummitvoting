@@ -80,7 +80,7 @@ const Nominations = [
         "src": "mlrit_logo"
       },
       {
-        "name": "Narayana Engineering College - Gudur",
+        "name": "Narayana Engineering College - Nellore and Gudur",
         "value": "narn",
         "src": "narayanacollege_logo"
       },
