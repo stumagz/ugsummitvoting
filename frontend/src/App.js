@@ -327,7 +327,7 @@ const Nominations = [
         "value": "praveen"
       },
       {
-        "name": "Praneethi Varma - G. Narayanamma Institute of Technology",
+        "name": "Pranathi Varma M - G. Narayanamma Institute of Technology",
         "value": "praneethi"
       },
       {
