@@ -30,7 +30,7 @@ exports.vote = functions.https.onRequest((request, response) => {
 					else {
 						otp = querySnapshot.docs[0].get('otp');
 						updateData = db.collection('votes').doc(querySnapshot.docs[0].id).update({
-							value: req.body.value
+							value: request.body.value
 						});
 						requestlib('http://control.msg91.com/api/sendhttp.php?authkey='+functions.config().msg91.authkey+'&mobiles='+mobile+'&message='+encodeURI("Your OTP to vote for Undergrad Summit Awards is ")+otp+'&sender=STUMGZ&route=4', { json: true }, (err, res, body) => {
 							if (err) { return response.send({result: 0, message: 'Something went wrong. Please try again.'});}
